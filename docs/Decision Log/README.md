@@ -17,3 +17,4 @@ Le decisioni rappresentano la fonte ufficiale delle scelte di Game Design, Archi
 | 0005 | 🏛️ Fondamentale | Che cos'è davvero un calciatore | 🟢 Attiva | v0.1 |
 | 0006 | 💻 Tecnica      | Modello di Dominio e Regole di Proprietà | 🟢 Attiva | v0.1 |
 | 0007 | 🏛️ Fondamentale | La Compagnia è un'entità | 🟢 Attiva | v0.1 |
+| 0008 | 🏛️ Fondamentale | Taverna e nodi | 🟢 Attiva | v0.1 |
