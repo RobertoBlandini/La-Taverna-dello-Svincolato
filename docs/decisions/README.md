@@ -18,3 +18,7 @@ Le decisioni rappresentano la fonte ufficiale delle scelte di Game Design, Archi
 | 0006 | 💻 Tecnica      | Modello di Dominio e Regole di Proprietà | 🟢 Attiva | v0.1 |
 | 0007 | 🏛️ Fondamentale | La Compagnia è un'entità | 🟢 Attiva | v0.1 |
 | 0008 | 🏛️ Fondamentale | Taverna e nodi | 🟢 Attiva | v0.1 |
+| 0009 | 🏛️ Fondamentale | Game Engine indipendente | 🟢 Attiva | v0.1 |
+| 0010 | 🏛️ Fondamentale | Game Engine e Domain Events | 🟢 Attiva | v0.1 |
+| 0011 | 🏛️ Fondamentale | Stagione | 🟢 Attiva | v0.1 |
+| 0012 | 🏛️ Fondamentale | Progressione | 🟢 Attiva | v0.1 |
