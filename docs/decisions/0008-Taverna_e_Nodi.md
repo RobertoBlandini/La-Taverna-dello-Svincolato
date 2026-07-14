@@ -1,214 +1,154 @@
-# 08 - Event System
+# Decisione #0008
 
-**Versione:** 2.0
+## Titolo
 
-**Stato:** 🟢 Congelato
-
-**Ultima modifica:** 11 Luglio 2026
+Il motore della Taverna è basato su Nodi e non su Eventi
 
 ---
 
-# Scopo del documento
+## Categoria
 
-L'Event System definisce la struttura con cui il motore della Taverna genera, presenta e risolve tutti gli eventi che avvengono durante una spedizione.
-
-L'obiettivo è realizzare un sistema completamente data-driven, nel quale nuovi eventi possano essere aggiunti senza modificare il codice applicativo.
+🏛️ Fondamentale
 
 ---
 
-# Filosofia
+## Stato
 
-Ogni evento rappresenta una decisione.
-
-Il valore di un evento non dipende dalla sua difficoltà, ma dalle conseguenze che produce sulla Compagnia e sulla storia dell'Allenatore.
+🟢 Attiva
 
 ---
 
-# Struttura di un Evento
+## Versione
 
-Ogni evento è composto dalle seguenti sezioni.
-
-1. Trigger
-2. Contesto
-3. Requisiti
-4. Presentazione
-5. Scelte
-6. Risoluzione
-7. Conseguenze
-8. Persistenza
-
-Questa struttura è comune a qualsiasi evento del gioco.
+v0.1
 
 ---
 
-# Trigger
+## Data
 
-Definisce quando un evento può essere selezionato.
-
-Esempi:
-
-- ingresso in una spedizione;
-- raggiungimento di un nodo;
-- possesso di un oggetto;
-- reputazione minima;
-- achievement ottenuto;
-- probabilità casuale.
+11 Luglio 2026
 
 ---
 
-# Contesto
+## Responsabile
 
-Descrive l'ambiente in cui avviene l'evento.
-
-Può dipendere da:
-
-- Regione;
-- Bioma;
-- Tipo di spedizione;
-- Meteo;
-- Ora del giorno;
-- Stato della Compagnia.
+Roberto Blandini
 
 ---
 
-# Requisiti
+## Decisione
 
-Stabiliscono le condizioni necessarie affinché l'evento possa essere eseguito.
+Il motore di gioco della Taverna dello Svincolato è costruito attorno al concetto di Nodo.
 
-Possono riguardare:
+Un Nodo rappresenta un comportamento generico del motore e definisce una precisa struttura di interazione con il giocatore.
 
-- livello della Compagnia;
-- membri presenti;
-- oggetti posseduti;
-- mercenari;
-- morale;
-- coesione;
-- reputazione;
-- statistiche specifiche.
+Gli Eventi rappresentano invece le istanze narrative dei Nodi.
+
+Il motore interpreta il tipo di Nodo e ne gestisce automaticamente il flusso di esecuzione.
 
 ---
 
-# Presentazione
+## Definizioni
 
-L'evento viene mostrato attraverso:
+### Nodo
 
-- titolo;
-- descrizione narrativa;
-- eventuale illustrazione;
-- dialoghi;
-- effetti sonori (versioni future).
+Un Nodo rappresenta un comportamento.
 
----
+Definisce:
 
-# Scelte
+- input richiesti;
+- regole di esecuzione;
+- scelte disponibili;
+- logica di risoluzione;
+- output prodotti.
 
-Ogni evento deve proporre almeno una scelta significativa.
-
-Le opzioni possono essere:
-
-- garantite;
-- condizionate;
-- nascoste;
-- sbloccabili.
-
-Le scelte possono dipendere da:
-
-- statistiche;
-- equipaggiamento;
-- composizione della Compagnia;
-- achievement;
-- oggetti;
-- eventi precedenti.
+Il Nodo non contiene elementi narrativi specifici.
 
 ---
 
-# Risoluzione
+### Evento
 
-Ogni scelta produce una risoluzione.
+Un Evento rappresenta un contenuto.
 
-La risoluzione può essere:
+Un Evento è un'istanza di un Nodo e ne eredita il comportamento, aggiungendo:
 
-- automatica;
-- deterministica;
-- probabilistica.
-
-Il risultato può dipendere da:
-
-- statistiche;
-- bonus;
-- sinergie;
-- casualità controllata.
+- ambientazione;
+- testo;
+- personaggi;
+- immagini;
+- ricompense;
+- varianti.
 
 ---
 
-# Conseguenze
+## Esempio
 
-Ogni evento modifica almeno un elemento persistente del gioco.
+Nodo:
 
-Ad esempio:
+Mercato
 
-- esperienza;
-- oro;
-- morale;
-- coesione;
-- inventario;
-- equipaggiamento;
-- reputazione;
-- progressione narrativa;
-- achievement.
+Può generare Eventi differenti:
 
----
+- Mercante Errante
+- Nano Fabbro
+- Carovana del Deserto
+- Collezionista di Reliquie
+- Bazar Goblin
 
-# Persistenza
-
-Al termine dell'evento il motore aggiorna lo stato della partita.
-
-Le modifiche vengono registrate prima del passaggio all'evento successivo.
+Tutti condividono lo stesso comportamento, ma differiscono per contenuto.
 
 ---
 
-# Classificazione degli Eventi
+## Obiettivi
 
-Gli eventi possono appartenere a differenti categorie.
+Separare completamente:
 
-- Narrativi
-- Combattimento
-- Esplorazione
-- Sociali
-- Commerciali
-- Puzzle
-- Casuali
-- Speciali
-- Boss
+- logica di gioco;
+- contenuti;
+- narrativa.
 
-Ogni categoria utilizza la stessa struttura logica.
+Consentire l'aggiunta di nuovi Eventi senza modificare il codice del motore.
 
 ---
 
-# Principi di Design
+## Benefici
 
-Ogni evento deve:
-
-- raccontare qualcosa;
-- offrire almeno una decisione interessante;
-- avere conseguenze misurabili;
-- poter essere riutilizzato;
-- poter essere esteso senza modificare il motore.
-
----
-
-# Data Driven Design
-
-Gli eventi rappresentano dati, non codice.
-
-Il motore interpreta la definizione dell'evento e ne gestisce automaticamente il ciclo di vita.
-
-Questo approccio permette di aggiungere nuovi contenuti senza intervenire sull'implementazione del sistema.
+- Maggiore modularità
+- Elevata riusabilità
+- Riduzione del codice duplicato
+- Facilità di bilanciamento
+- Espandibilità del gioco
+- Semplificazione del lavoro sui contenuti
 
 ---
 
-# Obiettivo
+## Impatto sul progetto
 
-L'Event System costituisce il linguaggio attraverso cui il gioco racconta il mondo della Taverna.
+Questa decisione influenza direttamente:
 
-Ogni avventura nasce dalla combinazione di eventi indipendenti che, insieme, generano esperienze sempre diverse per il giocatore.
+- Event System
+- Spedizioni
+- Regioni
+- Story Mode
+- Motore di gioco
+- Tool di authoring
+- Database
+- Backend PHP
+
+---
+
+## Decisioni correlate
+
+- Decisione #0003 – Le Spedizioni costituiscono il Gameplay principale
+- Decisione #0006 – Modello di Dominio e Regole di Proprietà
+- Decisione #0007 – La Compagnia è un'entità persistente
+
+---
+
+## Note
+
+Il numero dei Nodi dovrà rimanere limitato e stabile nel tempo.
+
+La crescita del progetto avverrà principalmente attraverso la creazione di nuovi Eventi, senza introdurre nuovi comportamenti salvo casi eccezionali.
+
+Questa separazione rappresenta uno dei principi architetturali fondamentali del motore della Taverna.
