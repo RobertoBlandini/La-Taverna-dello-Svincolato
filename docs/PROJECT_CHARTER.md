@@ -70,6 +70,17 @@ Implementazione
 
 Test
 
+
+La documentazione viene classificata in quattro famiglie:
+
+- GDD
+- TDD
+- Design
+- Roadmap
+
+Ogni documento appartiene a una sola famiglia.
+
+
 ---
 
 # Regole

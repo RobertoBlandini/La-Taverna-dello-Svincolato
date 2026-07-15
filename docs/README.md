@@ -83,6 +83,20 @@ Comprende:
 
 ---
 
+## Design
+
+Contiene i documenti di progettazione funzionale e di esperienza utente.
+
+Comprende:
+
+- MVP
+- First Play Experience
+- First Region
+- Technical Bootstrap
+- Prototipi futuri
+
+---
+
 # Filosofia
 
 La documentazione rappresenta la fonte di verità del progetto.
